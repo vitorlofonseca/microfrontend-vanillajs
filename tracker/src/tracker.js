@@ -1,11 +1,8 @@
-import { title } from "../components/title";
-import { input } from "../components/input";
-import { button } from "../components/button";
-import { stateManager } from "../index";
+import { title } from "../../components/title";
+import { input } from "../../components/input";
+import { button } from "../../components/button";
 
-export const mountTrackingPage = () => {
-  const rootDiv = document.getElementById("container");
-
+export const mountTrackingPage = (rootDiv) => {
   const bodyContainer = document.createElement("div");
   const pageTitle = title("Tracking");
 
@@ -18,7 +15,7 @@ export const mountTrackingPage = () => {
       return;
     }
 
-    const filteredShipment = stateManager.state.shipments.filter(
+    const filteredShipment = window.stateManager.state.shipments.filter(
       (ship) => ship.id === shipmentItemSearch.value
     )[0];
 

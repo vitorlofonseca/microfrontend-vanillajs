@@ -1,12 +1,9 @@
-import { title } from "../components/title";
-import { button } from "../components/button";
-import { input } from "../components/input";
-import { stateManager } from "../index";
+import { title } from "../../components/title.js";
+import { button } from "../../components/button.js";
+import { input } from "../../components/input.js";
 import { v4 as uuidv4 } from "uuid";
 
-export const mountHomePage = () => {
-  const rootDiv = document.getElementById("container");
-
+export const mountHomePage = (rootDiv) => {
   const bodyContainer = document.createElement("div");
   const pageTitle = title(
     "Here you can add a new random shipment. To check your shipment, you can go to shipments tab, or go to tracking tab and search for the specific shipment code"
@@ -15,9 +12,9 @@ export const mountHomePage = () => {
   const shipmentItem = input("Item of your shipment");
 
   const increaseCounterBtn = button("Add", () => {
-    stateManager.updateState({
+    window.stateManager.updateState({
       shipments: [
-        ...stateManager.state.shipments,
+        ...window.stateManager.state.shipments,
         { id: uuidv4(), name: shipmentItem.value },
       ],
     });

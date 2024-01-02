@@ -1,0 +1,19 @@
+{
+  "name": "container-microfrontend-vanillajs",
+  "version": "1.0.0",
+  "description": "Demo to show how microfrontend architecture works",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve"
+  },
+  "author": "Vitor Fonseca",
+  "license": "ISC",
+  "dependencies": {
+    "html-webpack-plugin": "^5.5.0",
+    "nodemon": "^2.0.22",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.7.4",
+    "uuid": "^9.0.1"
+  }
+}

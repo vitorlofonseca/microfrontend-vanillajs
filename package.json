@@ -3,16 +3,18 @@
   "version": "1.0.0",
   "description": "Demo to show how microfrontend architecture works",
   "main": "index.html",
-  "type": "module",
+  "private": true,
   "scripts": {
-    "dev": "vite"
+    "dev": "pnpm --parallel --filter=\"./container\" --filter=\"./shipments\" --filter=\"./tracker\" start"
   },
+  "workspaces": [
+    "container",
+    "shipments",
+    "tracker"
+  ],
   "author": "Vitor Fonseca",
   "license": "ISC",
   "devDependencies": {
-    "vite": "^5.0.10"
-  },
-  "dependencies": {
-    "uuid": "^9.0.1"
+    "npm-run-all": "^4.1.5"
   }
 }

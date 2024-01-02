@@ -1,6 +1,6 @@
-import { mountHomePage } from "../pages/home";
-import { mountTrackingPage } from "../pages/tracker";
-import { mountShipmentsPage } from "../pages/shipments";
+import { mountHomePage } from "../container/src/home";
+import { mountShipmentsPage } from "shipments/ShipmentsIndex";
+import { mountTrackingPage } from "tracker/TrackerIndex";
 
 export const ROUTES = {
   "": mountHomePage,
@@ -18,5 +18,5 @@ export const navigate = (destinationRoute) => {
 
   const rootDiv = document.getElementById("container");
   rootDiv.innerHTML = "";
-  functionDestinationRoute();
+  functionDestinationRoute(rootDiv);
 };

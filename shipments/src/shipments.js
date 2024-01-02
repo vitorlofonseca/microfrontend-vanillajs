@@ -1,14 +1,11 @@
-import { title } from "../components/title";
-import { stateManager } from "../index";
+import { title } from "../../components/title";
 
-export const mountShipmentsPage = () => {
-  const rootDiv = document.getElementById("container");
-
+export const mountShipmentsPage = (rootDiv) => {
   const bodyContainer = document.createElement("div");
   const pageTitle = title("Shipments");
 
   const shipments = document.createElement("div");
-  shipments.innerHTML = JSON.stringify(stateManager.state.shipments);
+  shipments.innerHTML = JSON.stringify(window.stateManager.state.shipments);
 
   bodyContainer.appendChild(pageTitle);
   bodyContainer.appendChild(shipments);
